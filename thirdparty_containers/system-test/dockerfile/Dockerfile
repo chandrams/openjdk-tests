@@ -57,9 +57,6 @@ RUN apt-get -y install \
 
 
 VOLUME ["/java"]
-#ENV JAVA_HOME=/java \
-#    PATH=/java/bin:$PATH \
-#    JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF8"
 ENV  JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF8"
 
 # Install Docker module to run test framework
@@ -86,7 +83,6 @@ RUN wget https://sourceforge.net/projects/ant-contrib/files/ant-contrib/1.0b3/an
 RUN git clone https://github.com/AdoptOpenJDK/openjdk-tests.git
 
 ENV JAVA_BIN=$JAVA_HOME/bin
-ENV SPEC=linux_x86-64_cmprssptrs
 ENV BUILD_LIST=systemtest
 
 RUN cd /openjdk-tests && \
